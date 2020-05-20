@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Online - Login</title>
+    <link rel="stylesheet" href="/CSS/style.css" type="text/css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <%- include ('../partials/header') %>
+        </header>
+
+        <div class="content1">
+            <form action="/" method="POST">
+            <p>
+            <label>Username</label><br>
+            <input class="txt1" name="username" type="text" placeholder="Username..."></p>
+            <p>
+                <label>Password</label><br>
+                <input class="txt1" name="password" type="password" placeholder="Password..."></p>
+            <button class="btnsign">Sign in</button>
+        </form>
+        </div>
+        <footer class="footer">
+            <%- include ('../partials/footer') %>
+        </footer>
+    </div>
+</body>
+
+</html>

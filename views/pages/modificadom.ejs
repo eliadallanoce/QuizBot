@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Online - Modifica</title>
+    <link rel="stylesheet" href="/CSS/style.css" type="text/css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <%- include ('../partials/header') %>
+        </header>
+        <div class="topnav">
+            <a class="active" href="/domande">Home</a>
+            <a href="/aggiungidom">Aggiungi</a>
+            <a href="/eliminadom">Elimina</a>
+            <a href="/about">About</a>
+            <div class="search-container">
+                <form action="/cercadom" method="GET">
+                    <input type="text" placeholder="Cerca..." name="id">
+                    <button type="submit">Cerca</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="content">
+            <h1>Modifica la domanda</h1>
+            <form action="/modificadom" method="POST">
+                <p>
+                <label>Id</label>
+                <input class="txt" name="id" type="text" placeholder="Id_Domanda"></p>
+                <h3> <%= testo %> </h3>
+                <p>
+                    <label>Domanda</label>
+                    <input class="txt" name="domanda" type="text" placeholder="Domanda"></p>
+                <p>
+                <label>Valore</label>
+                <input class="txt" name="valore" type="text" placeholder="Valore"></p>
+            <button class="button1">Modifica</button>
+        </form>
+        </div>
+        <footer class="footer">
+            <%- include ('../partials/footer') %>
+        </footer>
+    </div>
+</body>
+
+</html>

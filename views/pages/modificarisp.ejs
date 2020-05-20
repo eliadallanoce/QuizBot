@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Online - Modifica</title>
+    <link rel="stylesheet" href="/CSS/style.css" type="text/css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <%- include ('../partials/header') %>
+        </header>
+        <div class="topnav">
+            <a class="active" href="/risposte">Home</a>
+            <a href="/aggiungirisp">Aggiungi</a>
+            <a href="/eliminarisp">Elimina</a>
+            <a href="/about">About</a>
+            <div class="search-container">
+                <form action="/cercarisp" method="GET">
+                    <input type="text" placeholder="Cerca..." name="id">
+                    <button type="submit">Cerca</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="content">
+            <h1>Modifica la risposta</h1>
+            <form action="/modificarisp" method="POST">
+                <p>
+                <label>Id</label>
+                <input class="txt" name="id" type="text" placeholder="Id_Domanda"></p>
+                <h3> <%= testo %> </h3>
+                <p>
+                    <label>Risposta</label>
+                    <input class="txt" name="risposta" type="text" placeholder="Risposta"></p>
+                <p>
+                <label>Fk_Domanda</label>
+                <input class="txt" name="fk_domanda" type="text" placeholder="Fk_Domanda"></p>
+                <p>
+                    <label>Correttezza</label>
+                    <input class="txt" name="correttezza" type="text" placeholder="Correttezza"></p>
+            <button class="button1">Modifica</button>
+        </form>
+        </div>
+        <footer class="footer">
+            <%- include ('../partials/footer') %>
+        </footer>
+    </div>
+</body>
+
+</html>

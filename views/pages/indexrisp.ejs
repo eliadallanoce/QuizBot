@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Online - HomePage</title>
+    <link rel="stylesheet" href="/CSS/style.css" type="text/css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <%- include ('../partials/header') %>
+        </header>
+        <div class="topnav">
+            <a class="active" href="/risposte">Home</a>
+            <a href="/aggiungirisp">Aggiungi</a>
+            <a href="/modificarisp">Modifica</a>
+            <a href="/eliminarisp">Elimina</a>
+            <a href="/about">About</a>
+            <a href="/startpage">StartPage</a>
+            <div class="search-container">
+                <form action="/cercarisp" method="GET">
+                    <input type="text" placeholder="Cerca..." name="id">
+                    <button type="submit">Cerca</button>
+                </form>
+            </div>
+        </div>
+        <div class="content">
+            <h1> <%= testo %> </h1>
+            <table>
+                <tr>
+                    <th>Id</th>
+                    <th>Risposta</th>
+                    <th>Fk_Domanda</th>
+                    <th>Correttezza</th>
+                </tr>
+                <% risps.forEach(function(rows){ %>
+                <tr>
+                    <td> <%= rows.Id_Risposta %> </td>
+                    <td> <%= rows.Risposta %> </td>
+                    <td> <%= rows.Fk_Domanda %> </td>
+                    <td> <%= rows.Correttezza %> </td>
+                </tr>
+                <% }); %>
+
+            </table>
+        </div>
+        <footer class="footer">
+            <%- include ('../partials/footer') %>
+        </footer>
+    </div>
+</body>
+
+</html>
