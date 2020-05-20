@@ -1,12 +1,12 @@
-const telegramBot = require('node-telegram-bot-api');
+/*const telegramBot = require('node-telegram-bot-api');
 const token = '1171240003:AAGRQsiP-BXG37RPf03gRx821nqoKqo2Nik';
 const bot = new telegramBot(token, { polling: true });
 const sqlite3 = require('sqlite3').verbose();
 const vorpal = require('vorpal')();
 var Table = require('cli-table');
-var colors = require('colors/safe');
+var colors = require('colors/safe');*/
 var site = require('./site.js');
-let db = new sqlite3.Database('./QuizBot.db', (err) => {
+/*let db = new sqlite3.Database('./QuizBot.db', (err) => {
     if (err) {
         console.log(err.message);
     }
@@ -305,7 +305,7 @@ function LeggiRisposteDom(fk_dom) {
     var sql = "SELECT * FROM Risposte WHERE Fk_Domanda=?";
     db.all(sql, [fk_dom], (err, rows) => {
         if (err)
-            return console.log(err.message);
+            return console.log(err.message);*/
         rows.forEach((row) => {
             table.push([row.Id_Risposta, row.Risposta, row.Correttezza]);
         });
