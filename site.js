@@ -2,9 +2,13 @@ const express = require('express');
 const app = express();
 app.use('/CSS', express.static('CSS'));
 app.use('/img', express.static( 'img' ) );
-const port = 3000; 
+//const port = 3000; 
 const ejs = require('ejs');
 app.set("view engine", "ejs");
+var port = process.env.PORT || 3000;
+app.get('/', (req, res)=> res.send("ciaoo11"));
+app.listen(port, ()=> console.log('server in ascolto:'+ port));
+/*
 const sqlite3 = require('sqlite3').verbose();
 let db = new sqlite3.Database('./QuizBot.db', (err) => {
     if (err) {
@@ -198,6 +202,8 @@ app.route("/aggiungidom")
             res.send("Risposta non trovata!");
             return console.log(err.message);
         }
+        
+        */
         res.redirect("/risposte");      
     });      
     })
